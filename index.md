@@ -38,9 +38,6 @@ In this Lab I created a network of virtual machines (VMs) using the virtualisati
       Find the distinguished name of the OU, then use that after the redircmp powershell command. I deleted the computer that I’d already added, then when I tried to log into         this machine with a domain account it didn’t let me. I did a fresh join to the domain and this fixed it, the computer went into the correct new OU too.
 
 
-```markdown
-Syntax highlighted code block
-
 # Header 1
 ## Header 2
 ### Header 3
