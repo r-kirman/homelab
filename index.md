@@ -8,34 +8,34 @@ In this Lab I created a network of virtual machines (VMs) using the virtualisati
 
 ### Initial Setup
 
-    * Created 2 VMs for Windows 10 Enterprise and 1 VM for Windows Server 2016.
-      
-    * Created NAT network to allow connectivity between VMs.
-      
-    * Configured each VM; mounted the ISOs, connected to the NAT network and increased number of processors to 2.
-      
-    * Ran through installations of Windows on each VM.
-      
-    * Renamed WS2016 computer to DC01 within Server Manager.
-      
-    * Installed AD DS onto DC01 and promoted to Domain Controller (DC) - new forest called Springfield.com. 
+* Created 2 VMs for Windows 10 Enterprise and 1 VM for Windows Server 2016.
 
-    * Forest and domain functional level of WS2016.
-      
-    * Assigned Domain Controller with static IP of 10.10.10.10.
-      
-    * Temporarily assigned static addresses to Windows 10 VMs to verify connectivity through the NAT network.
-      Check whether you need to add the echo rule to firewall here or later when DHCP is installed.
-     
-    * Changed Win10 VM names, and added each to the Springfield.com domain, using admin permissions - restart to apply.
-      Joining to DC did not work, had to assign static IPs to DC and Computer, then use DC as primary DNS.
-      
-    * NetBIOS domain name of STARLITETECH.
-      
-    * Commands used to confirm DC “netdom query dc” & “dsquery server”.
-      
-    * Found the new computer object in AD, put it in an OU, make that the default OU for computers
-      Find the distinguished name of the OU, then use that after the redircmp powershell command. I deleted the computer that I’d already added, then when I tried to log into         this machine with a domain account it didn’t let me. I did a fresh join to the domain and this fixed it, the computer went into the correct new OU too.
+* Created NAT network to allow connectivity between VMs.
+
+* Configured each VM; mounted the ISOs, connected each to the NAT network and increased number of processors to 2.
+
+* Ran through installations of Windows on each VM.
+
+* Renamed WS2016 computer to DC01 within Server Manager.
+
+* Installed AD DS onto DC01 and promoted to Domain Controller (DC) - new forest called Springfield.com
+
+* Forest and domain functional level of WS2016
+
+* Assigned DC with static IP of 10.10.10.10
+
+* Temporarily assigned static addresses to Windows 10 VMs to verify connectivity through the NAT network.
+  Check whether you need to add the echo rule to firewall here or later when DHCP is installed
+
+* Changed Windows 10 VM names and added each to the Springfield.com domain, using admin permissions - restart to apply.
+  Joining to DC did not work, had to assign static IPs to DC and Computer, then use DC as primary DNS.
+  
+* NetBIOS domain name of SPRINGFIELD
+
+* Commands used to confirm DC "netdom query dc" & "dsquery server".
+
+* Found the new computer object in AD, put it in an OU and made that the default OU for computers.
+  Find the distinguished name of the OU, then use that after the redircmp powershell command. I deleted the computer that I'd already added, then when I tried to log into this m   machine with a domain account it didn't let me. I did a fresh join to the domain and this fixed it, the computer went into the correct new OU too.     
 
 
 # Header 1
