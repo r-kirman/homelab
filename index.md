@@ -1,10 +1,13 @@
-## Welcome to the Homelab Documentation Page
-
-
-
-### Homelab
+## Objective
 
 In this Lab I created a network of virtual machines (VMs) using the virtualisation software Oracle VM Virtualware. The purpose of the Lab was to develop practical knowledge of the Windows Server operating system and the Active Directory service.
+
+### Contents
+
+[initial setup link](#initial-setup)
+[dhcp link](#dhcp)
+[users and groups link](#users-and-groups)
+[gpos link](#gpos)
 
 ### Initial Setup
 
