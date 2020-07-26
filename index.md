@@ -4,10 +4,13 @@ In this Lab I created a network of virtual machines (VMs) using the virtualisati
 
 ### Contents
 
-[initial setup link](#initial-setup)
-[dhcp link](#dhcp)
-[users and groups link](#users-and-groups)
-[gpos link](#gpos)
+[Initial Setup](#initial-setup)
+
+[DHCP](#dhcp)
+
+[Users and Groups](#users-and-groups)
+
+[Group Policy Objects (GPOs)](#gpos)
 
 ### Initial Setup
 
