@@ -30,35 +30,47 @@ In this Lab I created a network of virtual machines (VMs) using the virtualisati
 * Changed Windows 10 VM names and added each to the Springfield.com domain, using admin permissions - restart to apply.
   Joining to DC did not work, had to assign static IPs to DC and Computer, then use DC as primary DNS.
   
-* NetBIOS domain name of SPRINGFIELD
+* NetBIOS domain name of SPRINGFIELD.
 
 * Commands used to confirm DC "netdom query dc" & "dsquery server".
 
 * Found the new computer object in AD, put it in an OU and made that the default OU for computers.
   Find the distinguished name of the OU, then use that after the redircmp powershell command. I deleted the computer that I'd already added, then when I tried to log into this m   machine with a domain account it didn't let me. I did a fresh join to the domain and this fixed it, the computer went into the correct new OU too.     
 
+### DHCP
 
-# Header 1
-## Header 2
-### Header 3
+* Configured DHCP on DC, using user SPRINGFIELD/administrator.
 
-- Bulleted
-- List
+* Created scope range 10.10.10.1 - 10.10.10.254/24.
 
-1. Numbered
-2. List
+* Excluded 10.10.10.1 - 99, default lease time of 8d.
 
-**Bold** and _Italic_ and `Code` text
+* Added DC's static IP (10.10.10.10) as the DNS, Default Gateway (DG) and DHCP server.
 
-[Link](url) and ![Image](src)
-```
+* Added inbound rule to firewalls to allow echo requests.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* Enabled VMs to obtain IP automatically, and confirmed connectivity to server. Confirmed the VMs were getting IP addresses from DHCP scope correctly.
 
-### Jekyll Themes
+### USERS AND GROUPS
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/r-kirman/homelab/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* Filled out the AD forest with characters from the Simpsons.
 
-### Support or Contact
+* Made groups for the users: "Powerplant", "Moe's Bar", "Simpson's Immediate Family", "Simpson's Extended Family", and "School".
+Note that many of the characters overlap. For instance, Bart would be part of "Simpson's Immediate Family" and "School", and the "Simpson's Immediate Family" would be a group inside of "Simpson's Extended Family".
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* Created a shared folder called SpringfieldFolder and within that made folders for each group - limited access to each folder to appropriate groups.
+This is all about permissions management. What's the difference between NTFS and Share permissions..
+
+* Made policy for password resets and password complexity requirements.
+
+* Limited domain joins to domain admins only.
+Any domain user can add a computer to the network domain usually, this is a security issue. Go to Server Manager > Tools > ADSI Edit (at this point I had to manually connect to the network before moving on) > Expand "Default Naming Context" > Select the correct domain and go to properties > Find the attribute called "ms-DS-MachineAccountQuota" > Change the value to 0. The default is 10, which allows any authenticated user from the domain to add workstations to the domain up to 10 times.
+
+### GPOs
+
+* For each user, mapped the share folder as a network drive to (K:).
+
+* Created a GPO to prevent any user from using removable storage.
+Computer Configuration > Policies > Administrative Templates > System > Removable Storage Access > Deny All Access.
+
+*
