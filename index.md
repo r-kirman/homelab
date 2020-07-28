@@ -1,14 +1,16 @@
 ### Contents
 
-[Project 1: Virtual Homelab](#project-1:-virtual-homelab)
+**[Project 1: Virtual Homelab]**(#project-1-virtual-homelab)
 
-[     Initial Setup](#initial-setup)
+[Initial Setup](#initial-setup)
 
-[     DHCP](#dhcp)
+[DHCP](#dhcp)
 
-[     Users and Groups](#users-and-groups)
+[Users and Groups](#users-and-groups)
 
-[     Group Policy Objects (GPOs)](#gpos)
+[Group Policy Objects (GPOs)](#gpos)
+
+[Troubleshooting](#troubleshooting)
 
 ## Project 1: Virtual Homelab
 
@@ -81,4 +83,4 @@ Any domain user can add a computer to the network domain usually, this is a secu
 * Created a GPO to prevent any user from using removable storage.
 Computer Configuration > Policies > Administrative Templates > System > Removable Storage Access > Deny All Access.
 
-*
+### Troubleshooting
