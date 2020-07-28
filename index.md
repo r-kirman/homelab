@@ -86,20 +86,20 @@ Computer Configuration > Policies > Administrative Templates > System > Removabl
 ### Troubleshooting
 
 * Problem: Can't connect to domain from VM.
-Solution(s): - Assign a static IP to VM, and use DC's IP as the preferred DNS.
-- Admin user and password are required to join the domain
-- Windows Server VM must be switched on.
+    * Solution(s): Assign a static IP to VM, and use DC's IP as the preferred DNS.
+    * Admin user and password are required to join the domain
+    * Windows Server VM must be switched on.
 
 * Problem: Can't ping VMs, no connectivity between VMs.
-Solution(s): - Turn off windows firewall as this will block echo requests by default.
-- Or create a custom rule in windows firewall to allow echo requests.
+    * Solution(s): Turn off windows firewall as this will block echo requests by default.
+    * Or create a custom rule in windows firewall to allow echo requests.
 
 * Problem: DHCP server isn't supplying guest VMs with IP addresses. 
-Solution(s): - Reconfigure NAT configuration in Oracle VM, disable option to "support DHCP".
-- Make sure the option to 'obtain an IP address automatically' is selected.
+    * Solution(s): - Reconfigure NAT configuration in Oracle VM, disable option to "support DHCP".
+    * Make sure the option to 'obtain an IP address automatically' is selected.
 
 * Problem: Can't delete an OU or protected folder.
-Solution(s): - Under 'View' make sure advanced features is ticked. Now go to OU/folder properties and untick 'protect from accidental deletion' box.
+    * Solution(s): - Under 'View' make sure advanced features is ticked. Now go to OU/folder properties and untick 'protect from accidental deletion' box.
 
 * Problem: Group policies won't apply where I want them to.
-Solution(s):
+    * Solution(s):
