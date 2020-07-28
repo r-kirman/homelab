@@ -1,16 +1,18 @@
-## Objective
-
-In this Lab I created a network of virtual machines (VMs) using the virtualisation software Oracle VM Virtualware. The purpose of the Lab was to develop practical knowledge of the Windows Server operating system and the Active Directory service.
-
 ### Contents
 
-[Initial Setup](#initial-setup)
+[Project 1: Virtual Homelab](#project-1:-virtual-homelab)
 
-[DHCP](#dhcp)
+[     Initial Setup](#initial-setup)
 
-[Users and Groups](#users-and-groups)
+[     DHCP](#dhcp)
 
-[Group Policy Objects (GPOs)](#gpos)
+[     Users and Groups](#users-and-groups)
+
+[     Group Policy Objects (GPOs)](#gpos)
+
+## Project 1: Virtual Homelab
+
+In this Lab I created a network of virtual machines (VMs) using the virtualisation software Oracle VM Virtualware. The purpose of the Lab was to develop practical knowledge of the Windows Server operating system and the Active Directory service.
 
 ### Initial Setup
 
