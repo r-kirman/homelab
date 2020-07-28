@@ -1,6 +1,6 @@
 ### Contents
 
-**[Project 1: Virtual Homelab]**(#project-1-virtual-homelab)
+**[Project 1: Virtual Homelab](#project-1-virtual-homelab)**
 
 [Initial Setup](#initial-setup)
 
